@@ -1,0 +1,37 @@
+/**index.wxss**/
+
+/* 导航栏 */
+
+.nav {
+  height: 90rpx;
+  background-color: rgb(50, 155, 200);
+}
+
+.content {
+  display: flex;
+}
+
+.content-item {
+  align-items: center;
+  display: flex;
+  width: 750rpx;
+  flex-shrink: 0;
+}
+
+.new-first-backgrand {
+  padding: 28rpx 26rpx;
+  background-color: rgb(28, 207, 58);
+}
+
+.new-first {
+  width: 698rpx;
+  height: 350rpx;
+}
+
+.new-list {
+  height: 186rpx;
+  width: 698rpx;
+  margin: auto;
+  border-bottom:1rpx solid rgb(179, 175, 175);
+  background-color: rgb(28, 207, 183);
+}

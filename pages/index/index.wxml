@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class='nav'>navigator</view>
+<!--横向滑动-->
+
+<scroll-view scroll-x>
+  <view class='content'>
+    <view class='content-item' wx:for="{{[1,2,3,4,5,6,7]}}">
+      <scroll-view scroll-y>
+        <view class='new-first-backgrand'>
+          <image class='new-first' src='/images/news-first.png'></image>
+        </view>
+        <view class='new-list' wx:for="{{[1,2,3,4,5,6,7]}}">news list</view>
+      </scroll-view>
+    </view>
+  </view>
+</scroll-view>

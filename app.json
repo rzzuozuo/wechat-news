@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#329bc8",
+    "backgroundColorTop": "#329bc8",
+    "navigationBarTitleText": "快读·咨询",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "sitemapLocation": "sitemap.json"
+}
