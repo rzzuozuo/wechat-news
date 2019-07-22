@@ -5,17 +5,21 @@
 .nav {
   display: flex;
   justify-content: space-around;
-  color: rgb(255, 255, 255);
   height: 90rpx;
-  background-color: rgb(50, 155, 200);
+  background-color: rgb(50, 155, 200)
 }
 
+.newsType {
+  color: rgb(255, 255, 255);
+}
+.newstype-content{
+  height: 2000rpx;
+}
 .content {
   display: flex;
 }
 
 .content-item {
-  align-items: center;
   display: flex;
   width: 750rpx;
   flex-shrink: 0;
@@ -40,7 +44,7 @@
 }
 
 .new-list-left {
-  width:500rpx;
+  width: 500rpx;
   margin: 30rpx 40rpx 30rpx 0;
 }
 
