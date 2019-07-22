@@ -3,6 +3,9 @@
 /* 导航栏 */
 
 .nav {
+  display: flex;
+  justify-content: space-around;
+  color: rgb(255, 255, 255);
   height: 90rpx;
   background-color: rgb(50, 155, 200);
 }
@@ -19,19 +22,49 @@
 }
 
 .new-first-backgrand {
-  padding: 28rpx 26rpx;
-  background-color: rgb(28, 207, 58);
+  background-color: rgb(255, 255, 255);
 }
 
 .new-first {
+  margin: 28rpx 26rpx;
   width: 698rpx;
   height: 350rpx;
 }
 
 .new-list {
-  height: 186rpx;
+  display: flex;
+  justify-content: space-between;
   width: 698rpx;
-  margin: auto;
-  border-bottom:1rpx solid rgb(179, 175, 175);
-  background-color: rgb(28, 207, 183);
+  margin: 0rpx 26rpx;
+  border-bottom: 1rpx solid rgb(179, 175, 175);
+}
+
+.new-list-left {
+  width:500rpx;
+  margin: 30rpx 40rpx 30rpx 0;
+}
+
+.new-item-title {
+  font-size: 32rpx;
+  line-height: 44rpx;
+}
+
+.new-item-source-time {
+  display: flex;
+  font-size: 24rpx;
+  line-height: 44rpx;
+  opacity: 0.5;
+}
+
+.source {
+}
+
+.time {
+  margin-left: 32rpx;
+}
+
+.new-list-image {
+  margin: 30rpx 0;
+  height: 126rpx;
+  width: 188rpx;
 }

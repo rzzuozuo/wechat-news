@@ -1,15 +1,32 @@
 <!--index.wxml-->
-<view class='nav'>navigator</view>
+<!--导航栏-->
+<view class='nav'>
+<view class="newsType" wx:for="{{[0,1,2,3,4,5,6]}}">{{newstype[item]}}</view>
+</view>
 <!--横向滑动-->
-
 <scroll-view scroll-x>
+  <!--新闻类别-->
   <view class='content'>
-    <view class='content-item' wx:for="{{[1,2,3,4,5,6,7]}}">
+    <view class='content-item' wx:for="{{[0,1,2,3,4,5,6]}}">
+      <!--纵向滑动-->
       <scroll-view scroll-y>
+        <!--新闻列表-->
+        <!--特写-->
         <view class='new-first-backgrand'>
           <image class='new-first' src='/images/news-first.png'></image>
         </view>
-        <view class='new-list' wx:for="{{[1,2,3,4,5,6,7]}}">news list</view>
+        <!--普通-->
+        <view class='new-list' wx:for="{{[1,2,3,4,5,6,7]}}">
+          <view class="new-list-left">
+            <view class="new-item-title">谢敏尔：拥抱新时代 践行新思想 实现新作为</view>
+            <view class="new-item-source-time">
+              <view class="source">人民日报</view>
+              <view class="time">21:08</view>
+            </view>
+          </view>
+          <image class="new-list-image" src="/images/news_13.png">
+          </image>
+        </view>
       </scroll-view>
     </view>
   </view>

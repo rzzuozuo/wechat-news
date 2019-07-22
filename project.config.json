@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.7.4",
 	"appid": "wx9cd6ec07e0ec8f04",
-	"projectname": "news",
+	"projectname": "wechat-news",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
