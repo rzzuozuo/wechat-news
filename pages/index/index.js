@@ -1,63 +1,56 @@
 //index.js
 Page({
   data: {
-    newstype: ['国内', '国际', '财经', '娱乐', '军事', '体育', '其他'],
-    news: [{
-        id: 0,
-        state_hot: false,
-        title: "谢敏尔：拥抱新时代 践行新思想 实现新作为0",
-        source: "人民日报0",
-        time: "04:01",
-        image_list_url: "/images/news_07.gif",
-        image_first_url: "/images/news_03.gif"
+    newstype: [{
+        id: '国内',
+        type: "gn"
       },
       {
-        id: 1,
-        state_hot: true,
-        title: "谢敏尔：拥抱新时代 践行新思想 实现新作为1",
-        source: "人民日报1",
-        time: "04:02",
-                image_list_url: "/images/news_09.gif",
-        image_first_url: "/images/news_03.gif"
-      },
-      {
-        id: 2,
-        state_hot: false,
-        title: "谢敏尔：拥抱新时代 践行新思想 实现新作为2",
-        source: "人民日报2",
-        time: "04:03",
-        image_list_url: "/images/news_11.gif",
-        image_first_url: "/images/news_03.gif"
-      },
-      {
-        id: 3,
-        state_hot: false,
-        title: "谢敏尔：拥抱新时代 践行新思想 实现新作为3",
-        source: "人民日报3",
-        time: "04:04",
-        image_list_url: "/images/news_13.png",
-        image_first_url: "/images/news_03.gif"
+        id: '国际',
+        type: "gj"
+      }, {
+        id: '财经',
+        type: 'cj'
+      }, {
+        id: '娱乐',
+        type: 'yl'
+      }, {
+        id: '军事',
+        type: 'js'
+      }, {
+        id: '体育',
+        type: 'ty'
+      }, {
+        id: '其他',
+        type: 'qt'
       }
     ],
+    newsArray: []
   },
-  changeIndicatorDots: function (e) {
-    this.setData({
-      indicatorDots: !this.data.indicatorDots
+  onLoad() {
+    this.getNews()
+  },
+  onPullDownRefresh() {
+    this.getNews(() => {
+      wx.stopPullDownRefresh()
     })
   },
-  changeAutoplay: function (e) {
-    this.setData({
-      autoplay: !this.data.autoplay
-    })
-  },
-  intervalChange: function (e) {
-    this.setData({
-      interval: e.detail.value
-    })
-  },
-  durationChange: function (e) {
-    this.setData({
-      duration: e.detail.value
+  getNews() {
+    wx.request({
+      url: 'https://test-miniprogram.com/api/news/list', //仅为示例，并非真实的接口地址
+      data: {
+        type: "gn"
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: res => {
+        this.data.newsArray = res.data.result.concat(this.data.newsArray)
+        this.setData({
+          newsArray: this.data.newsArray
+        })
+        console.log(this.data.newsArray)
+      }
     })
   }
 })

@@ -1,11 +1,11 @@
 <!--index.wxml-->
 <!--导航栏-->
 <view class='nav'>
-  <view class="newsType" wx:for="{{[0,1,2,3,4,5,6]}}">{{newstype[item]}}</view>
+  <view class="newsType" wx:for="{{newstype}}" wx:key="id">{{item.id}}</view>
 </view>
 <!--横向滑动-->
 <swiper class="newstype-content">
-  <block wx:for="{{newstype}}">
+  <block wx:for="{{newstype}}" wx:key="id">
     <swiper-item>
       <view class='content'>
         <!--纵向滑动-->
@@ -16,15 +16,15 @@
             <image class='new-first' src='/images/news-first.png'></image>
           </view>
           <!--普通-->
-          <view class='new-list' wx:for="{{[0,1,2,3,4,5,6,7]}}">
+          <view class='new-list' wx:for="{{newsArray}}" wx:key="id">
             <view class="new-list-left">
-              <view class="new-item-title">{{news[item].title}}</view>
+              <view class="new-item-title">{{item.title}}</view>
               <view class="new-item-source-time">
-                <view class="source">{{news[item].source}}</view>
-                <view class="time">{{news[item].time}}</view>
+                <view class="source">{{item.source}}</view>
+                <view class="time">{{item.date}}</view>
               </view>
             </view>
-            <image class="new-list-image" src="{{news[item].image_list_url}}">
+            <image class="new-list-image" src="{{item.firstImage}}">
             </image>
           </view>
         </scroll-view>
