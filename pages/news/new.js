@@ -20,17 +20,17 @@ Page({
    */
   onLoad: function(options) {
     console.log("new onLoad!")
+    let id = options.id
     wx.request({
       url: 'https://test-miniprogram.com/api/news/detail',
       data: {
-        id: 1552623252516
+        id: id
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
       success: res => {
-        console.log("get detail succes id:",this.data.id)
-
+        console.log("request success id:",id)
         console.log(res)
         let result =res.data.result
         let content =result.content
@@ -47,7 +47,7 @@ Page({
           source:source,
           title:title
         })
-        console.log(this.data)
+        console.log(this.data.id)
       }
     })
   }

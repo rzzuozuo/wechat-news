@@ -16,7 +16,8 @@
             <image class='new-first' src='/images/news-first.png'></image>
           </view>
           <!--普通-->
-          <view class='new-list' wx:for="{{item.news}}" wx:key="id" bindtap="navigatToContent">
+          <block wx:for="{{item.news}}" wx:key="id" >
+          <view class='new-list'id ="{{item.id}}" bindtap="navigatToContent">
             <view class="new-list-left">
               <view class="new-item-title">{{item.title}}</view>
               <view class="new-item-source-time">
@@ -27,6 +28,7 @@
             <image class="new-list-image" src="{{item.firstImage}}">
             </image>
           </view>
+          </block>
           <view class="content-bottom"> 没有更多了</view>
         </scroll-view>
       </view>

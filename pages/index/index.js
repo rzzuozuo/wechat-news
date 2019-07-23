@@ -110,7 +110,7 @@ contentSwiperFinish: function(event) {
 },
 navigatToContent: function(event) {
   wx.navigateTo({
-    url: '../../pages/news/new'
+    url: '../../pages/news/new?id='+event.currentTarget.id
   })
 },
 getNews(index, callback) {
