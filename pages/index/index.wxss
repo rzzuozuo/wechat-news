@@ -6,15 +6,19 @@
   display: flex;
   justify-content: space-around;
   height: 90rpx;
-  background-color: rgb(50, 155, 200)
+  background-color: rgb(50, 155, 200);
 }
 
 .newsType {
   color: rgb(255, 255, 255);
 }
+
+/*
 .newstype-content{
-  height: 2000rpx;
+  height:1100rpx;
 }
+*/
+
 .content {
   display: flex;
 }
@@ -55,6 +59,7 @@
 
 .new-item-source-time {
   display: flex;
+  justify-content: space-between;
   font-size: 24rpx;
   line-height: 44rpx;
   opacity: 0.5;
@@ -64,11 +69,16 @@
 }
 
 .time {
-  margin-left: 32rpx;
+  margin-right: 32rpx;
 }
 
 .new-list-image {
   margin: 30rpx 0;
   height: 126rpx;
   width: 188rpx;
+}
+.content-bottom{
+  line-height: 100rpx;
+  text-align: center;
+  background-color: rgb(219, 192, 133)
 }

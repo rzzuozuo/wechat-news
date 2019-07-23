@@ -4,7 +4,7 @@
   <view class="newsType" wx:for="{{newstype}}" wx:key="id">{{item.id}}</view>
 </view>
 <!--横向滑动-->
-<swiper class="newstype-content">
+<swiper class="newstype-content" style="height:{{height}}" bindanimationfinish="contentSwiperFinish">
   <block wx:for="{{newstype}}" wx:key="id">
     <swiper-item>
       <view class='content'>
@@ -27,8 +27,16 @@
             <image class="new-list-image" src="{{item.firstImage}}">
             </image>
           </view>
+          <view class="content-bottom">正在加载中 ···</view>
         </scroll-view>
       </view>
     </swiper-item>
   </block>
 </swiper>
+
+<template name="newsItem">
+  <view>
+    <text> {{index}}: {{msg}} </text>
+    <text> Time: {{time}} </text>
+  </view>
+</template>
