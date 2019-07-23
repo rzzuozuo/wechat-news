@@ -46,7 +46,9 @@
   margin: 0rpx 26rpx;
   border-bottom: 1rpx solid rgb(179, 175, 175);
 }
-
+.new-list:last-child{
+  border-bottom: none;
+}
 .new-list-left {
   width: 500rpx;
   margin: 30rpx 40rpx 30rpx 0;

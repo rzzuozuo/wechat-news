@@ -5,7 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: 1552623252516
+    id: 1552623252516,
+    time:"",
+    content:[],
+    firstImage:'',
+    readCount:0,
+    title:"",
+    source:"",
+
   },
 
   /**
@@ -25,6 +32,22 @@ Page({
         console.log("get detail succes id:",this.data.id)
 
         console.log(res)
+        let result =res.data.result
+        let content =result.content
+        let time = result.date.slice(11,16)
+        let firstImage =result.firstImage
+        let readCount = result.readCount
+        let source = result.source
+        let title = result.title
+        this.setData({
+          content:content,
+          time:time,
+          firstImage:firstImage,
+          readCount:readCount,
+          source:source,
+          title:title
+        })
+        console.log(this.data)
       }
     })
   }
