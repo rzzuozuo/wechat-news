@@ -1,10 +1,10 @@
 <!--index.wxml-->
 <!--导航栏-->
 <view class='nav'>
-  <view class="newsType" wx:for="{{newstype}}" wx:key="id" style="color:{{item.color}}">{{item.id}}</view>
+  <view class="newsType" wx:for="{{newstype}}" wx:key="id" style="color:{{item.color}}" bindtap="navbtn_{{item.type}}">{{item.id}}</view>
 </view>
 <!--横向滑动-->
-<swiper class="newstype-content" style="height:{{height}}" bindanimationfinish="contentSwiperFinish">
+<swiper class="newstype-content" style="height:{{height}}" bindanimationfinish="contentSwiperFinish" bindchange="swiperChange" current="{{current}}">
   <block wx:for="{{newstype}}" wx:key="id">
     <swiper-item>
       <view class='content'>
