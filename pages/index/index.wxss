@@ -9,9 +9,9 @@
   background-color: rgb(50, 155, 200);
 }
 
-.newsType {
+/* .newsType {
   color: rgb(255, 255, 255);
-}
+} */
 
 /*
 .newstype-content{
