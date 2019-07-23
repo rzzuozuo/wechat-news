@@ -4,7 +4,7 @@
   <view class="newsType" wx:for="{{newstype}}" wx:key="id" style="color:{{item.color}}" bindtap="navbtn_{{item.type}}">{{item.id}}</view>
 </view>
 <!--横向滑动-->
-<swiper class="newstype-content" style="height:{{height}}" bindanimationfinish="contentSwiperFinish" bindchange="swiperChange" current="{{current}}">
+<swiper class="newstype-content" style="height:{{height}}rpx" bindanimationfinish="contentSwiperFinish" bindchange="swiperChange" current="{{current}}">
   <block wx:for="{{newstype}}" wx:key="id">
     <swiper-item>
       <view class='content'>
