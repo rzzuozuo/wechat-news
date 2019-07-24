@@ -111,7 +111,7 @@ Page({
           array[i].firstImage = array[i].firstImage == '' ? '../../images/news-first.png' : array[i].firstImage
         }
         this.data.newstype[index].news = array
-        this.data.newstype[index].height = 414 + 193 * this.data.newstype[index].news.length - 2 + 100
+        this.data.newstype[index].height = 414 + 193 * (this.data.newstype[index].news.length-1) - 2 + 100
         this.data.height = this.data.newstype[index].height
         this.setData({
           newstype: this.data.newstype,
