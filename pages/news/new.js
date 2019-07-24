@@ -5,15 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: 1552623252516,
+    id: 0,
     time:"",
     content:[],
     firstImage:'',
     readCount:0,
     title:"",
-    source:"",
-    imgwidth: 698,
-    imgheight:{}
+    source:""
   },
 
   /**
@@ -25,15 +23,6 @@ Page({
       id: options.id
     })
     this.getContent(options.id)
-  },
-  imageLoad: function (event) {
-    let size = event.detail
-    let width = this.data.imgwidth
-    let height = parseInt(width * size.height / size.width)
-    this.data.imgheight[event.currentTarget.id] = height
-    this.setData({
-      imgheight: this.data.imgheight
-    })
   },
   onPullDownRefresh() {
     this.getContent(this.data.id, wx.stopPullDownRefresh)

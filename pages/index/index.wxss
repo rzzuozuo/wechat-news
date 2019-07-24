@@ -27,13 +27,32 @@
 .hotNewsInfo {
   padding-top: 250rpx;
   margin: 0 50rpx;
+}
+
+.hotNewsTitle {
+  font-size: 32rpx;
+  line-height: 44rpx;
   color: #fff;
+  padding: 0 20rpx;
+  text-shadow:2rpx 2rpx 4rpx #000
+}
+
+.hotNewsSourceTime {
+  display: flex;
+  font-size: 22rpx;
+  color: rgb(240, 235, 235);
+  text-shadow:2rpx 2rpx 4rpx #000;
+  padding: 0 20rpx;
+}
+
+.hotNewsSource {
+  width: 300rpx;
 }
 
 .hotBackgroundImg {
   width: 750rpx;
   height: 406rpx;
-  opacity: 0.1;
+  opacity: 0.5;
   position: absolute;
   top: 0;
   z-index: -1;
@@ -49,19 +68,6 @@
   border-radius: 5px;
 }
 
-.hotNewsTitle {
-  font-size: 32rpx;
-  line-height: 44rpx;
-}
-
-.hotNewsSourceTime {
-  display: flex;
-  font-size: 22rpx;
-  color: rgb(240, 235, 235)
-}
-.hotNewsSource{
-  width: 300rpx;
-}
 .new-list {
   display: flex;
   justify-content: space-between;

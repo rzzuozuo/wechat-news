@@ -24,8 +24,8 @@
                   <view class="hotNewsTime ">{{item.date}}</view>
                 </view>
               </view>                
-                <image class='hotBackgroundImg' src='{{item.firstImage}}' mode='scaleToFill'></image>
-                <image class='hotImg' src='{{item.firstImage}}'></image>
+                <image class='hotBackgroundImg' src='{{item.firstImage}}' mode='aspectFill'></image>
+                <image class='hotImg' src='{{item.firstImage}}' mode='aspectFit'></image>
               </view>
             </block>
             <block wx:else>
@@ -37,7 +37,7 @@
                     <view class="time ">{{item.date}}</view>
                   </view>
                 </view>
-                <image class="new-list-image " src="{{item.firstImage}} "></image>
+                <image class="new-list-image " src="{{item.firstImage}}" mode='aspectFit'></image>
               </view>
             </block>
           </block>
