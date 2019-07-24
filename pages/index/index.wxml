@@ -12,24 +12,28 @@
         <scroll-view scroll-y>
           <!--新闻列表-->
           <!--特写-->
-          <view class='new-first-backgrand'>
-            <image class='new-first' src='/images/news-first.png'></image>
-          </view>
+
           <!--普通-->
-          <block wx:for="{{item.news}}" wx:key="id" >
-          <view class='new-list'id ="{{item.id}}" bindtap="navigatToContent">
-            <view class="new-list-left">
-              <view class="new-item-title">{{item.title}}</view>
-              <view class="new-item-source-time">
-                <view class="source">{{item.source}}</view>
-                <view class="time">{{item.date}}</view>
+          <block wx:for="{{item.news}}" wx:for-index="i" wx:key="id">
+            <block wx:if="{{i == 0}}">
+              <view class='new-first-backgrand' id="{{item.id}} " bindtap="navigatToContent">
+                <image class='new-first' src='{{item.firstImage}}'></image>
               </view>
-            </view>
-            <image class="new-list-image" src="{{item.firstImage}}">
-            </image>
-          </view>
+            </block>
+            <block wx:else>
+              <view class='new-list' id="{{item.id}} " bindtap="navigatToContent">
+                <view class="new-list-left ">
+                  <view class="new-item-title ">{{item.title}}</view>
+                  <view class="new-item-source-time ">
+                    <view class="source ">{{item.source}}</view>
+                    <view class="time ">{{item.date}}</view>
+                  </view>
+                </view>
+                <image class="new-list-image " src="{{item.firstImage}} "></image>
+              </view>
+            </block>
           </block>
-          <view class="content-bottom"> 没有更多了</view>
+          <view class="content-bottom "> 没有更多了</view>
         </scroll-view>
       </view>
     </swiper-item>
