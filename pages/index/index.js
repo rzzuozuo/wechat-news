@@ -62,7 +62,6 @@ Page({
     this.getNews(0)
   },
   navbtn: function(event) {
-    console.log("navbtn:", event)
     this.setData({
       current: event.currentTarget.id
     })

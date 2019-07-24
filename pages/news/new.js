@@ -21,8 +21,6 @@ Page({
    */
   onLoad: function(options) {
     console.log("new onLoad!")
-
-    console.log(this.data.imgheight)
     let id = options.id
     wx.request({
       url: 'https://test-miniprogram.com/api/news/detail',
@@ -55,15 +53,12 @@ Page({
     })
   },
   imageLoad: function (event) {
-    console.log("image load:", event)
     let size = event.detail
     let width = this.data.imgwidth
     let height = parseInt(width * size.height / size.width)
-    console.log("new:", width, height)
     this.data.imgheight[event.currentTarget.id] = height
     this.setData({
       imgheight: this.data.imgheight
     })
-    console.log("imgheight:",this.data.imgheight)
   }
 })
