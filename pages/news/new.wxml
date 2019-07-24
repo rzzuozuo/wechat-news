@@ -1,20 +1,22 @@
 <!--pages/news/new.wxml-->
-<view>分割线</view>
-<view>
-  <view>{{title}}</view>
-  <view>
-    <view>{{source}}</view>
-    <view>{{time}}</view>
-    <view>阅读 {{readCount}}</view>
+<view class="main">
+  <view class="header">
+    <view class="title">{{title}}</view>
+    <view class="info">
+      <view class="source">{{source}}</view>
+      <view class="time">{{time}}</view>
+      <view class="readCount">阅读 {{readCount}}</view>
+    </view>
   </view>
-</view>
-<view>
-  <block wx:for="{{content}}" wx:key="{{item.id}}">
-    <block wx:if="{{item.type == 'p'}}">
-      <view>{{item.text}}</view>
+  <view>
+    <block wx:for="{{content}}" wx:key="{{item.id}}">
+      <block wx:if="{{item.type == 'p'}}">
+        <view class="content-text">{{item.text}}</view>
+      </block>
+      <block wx:elif="{{item.type == 'image'}}">
+        <image class= "content-imag" id="{{item.id}}"bindload="imageLoad" src="{{item.src}}" style="width:{{imgwidth}}rpx;height:{{imgheight[item.id]}}rpx"></image>
+      </block>
     </block>
-    <block wx:elif="{{item.type == 'image'}}">
-      <image src="{{item.src}}"></image>
-    </block>
-  </block>
+    <view class="content-bottom">我是有底线的</view>
+  </view>
 </view>
