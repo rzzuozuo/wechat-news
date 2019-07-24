@@ -103,14 +103,14 @@ Page({
         console.log("getNews success")
         let array = res.data.result
         console.log("getted array:", array)
-        //处理字符串长度，防止超出范围
+        //处理数据方便显示
         for (var i = 0; i < array.length; ++i) {
-          array[i].title = array[i].title.slice(0, 25) + "..."
+          array[i].title = array[i].title.length > 25 ? array[i].title.slice(0, 25) + "..." : array[i].title
           array[i].date = array[i].date.slice(0, 10)
+          array[i].source = array[i].source.length>10?array[i].source.slice(0, 10) + "...":array[i].source
+          array[i].firstImage = array[i].firstImage == '' ? '../../images/news-first.png' : array[i].firstImage
         }
         this.data.newstype[index].news = array
-
-
         this.data.newstype[index].height = 414 + 193 * this.data.newstype[index].news.length - 2 + 100
         this.data.height = this.data.newstype[index].height
         this.setData({
