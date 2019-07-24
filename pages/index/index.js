@@ -107,7 +107,7 @@ Page({
         for (var i = 0; i < array.length; ++i) {
           array[i].title = array[i].title.length > 25 ? array[i].title.slice(0, 25) + "..." : array[i].title
           array[i].date = array[i].date.slice(0, 10)
-          array[i].source = array[i].source.length>10?array[i].source.slice(0, 10) + "...":array[i].source
+          array[i].source = array[i].source.length > 10 ? array[i].source.slice(0, 10) + "..." : array[i].source.length > 0 ? array[i].source:'未知来源'
           array[i].firstImage = array[i].firstImage == '' ? '../../images/news-first.png' : array[i].firstImage
         }
         this.data.newstype[index].news = array
