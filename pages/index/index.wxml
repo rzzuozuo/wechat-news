@@ -16,8 +16,16 @@
           <!--普通-->
           <block wx:for="{{item.news}}" wx:for-index="i" wx:key="id">
             <block wx:if="{{i == 0}}">
-              <view class='new-first-backgrand' id="{{item.id}} " bindtap="navigatToContent">
-                <image class='new-first' src='{{item.firstImage}}'></image>
+              <view class='new-first' id="{{item.id}} " bindtap="navigatToContent">
+              <view class='hotNewsInfo'>
+              <view class='hotNewsTitle'>{{item.title}}</view>
+                <view class="hotNewsSourceTime ">
+                  <view class="hotNewsSource ">{{item.source}}</view>
+                  <view class="hotNewsTime ">{{item.date}}</view>
+                </view>
+              </view>                
+                <image class='hotBackgroundImg' src='{{item.firstImage}}' mode='scaleToFill'></image>
+                <image class='hotImg' src='{{item.firstImage}}'></image>
               </view>
             </block>
             <block wx:else>
