@@ -66,6 +66,9 @@ Page({
       current: event.currentTarget.id
     })
   },
+  onPullDownRefresh() {
+    this.getNews(this.data.currentNewsTypeIndex, wx.stopPullDownRefresh)    
+  },
   onReachBottom() {
     this.getNews(this.data.currentNewsTypeIndex)
   },

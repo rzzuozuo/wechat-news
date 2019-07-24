@@ -21,7 +21,24 @@ Page({
    */
   onLoad: function(options) {
     console.log("new onLoad!")
-    let id = options.id
+    this.setData({
+      id: options.id
+    })
+    this.getContent(options.id)
+  },
+  imageLoad: function (event) {
+    let size = event.detail
+    let width = this.data.imgwidth
+    let height = parseInt(width * size.height / size.width)
+    this.data.imgheight[event.currentTarget.id] = height
+    this.setData({
+      imgheight: this.data.imgheight
+    })
+  },
+  onPullDownRefresh() {
+    this.getContent(this.data.id, wx.stopPullDownRefresh)
+  },
+  getContent(id, callback) {
     wx.request({
       url: 'https://test-miniprogram.com/api/news/detail',
       data: {
@@ -31,34 +48,26 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: res => {
-        console.log("request success id:",id)
+        console.log("request success id:", id)
         console.log(res)
-        let result =res.data.result
-        let content =result.content
-        let time = result.date.slice(11,16)
-        let firstImage =result.firstImage
+        let result = res.data.result
+        let content = result.content
+        let time = result.date.slice(11, 16)
+        let firstImage = result.firstImage
         let readCount = result.readCount
         let source = result.source
         let title = result.title
         this.setData({
-          content:content,
-          time:time,
-          firstImage:firstImage,
-          readCount:readCount,
-          source:source,
-          title:title
+          content: content,
+          time: time,
+          firstImage: firstImage,
+          readCount: readCount,
+          source: source,
+          title: title
         })
         console.log(this.data.id)
+        callback && callback()
       }
-    })
-  },
-  imageLoad: function (event) {
-    let size = event.detail
-    let width = this.data.imgwidth
-    let height = parseInt(width * size.height / size.width)
-    this.data.imgheight[event.currentTarget.id] = height
-    this.setData({
-      imgheight: this.data.imgheight
     })
   }
 })
